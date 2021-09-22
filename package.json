@@ -1,0 +1,12 @@
+{
+  "name": "dicoding-movipemedia",
+  "version": "1.0.0",
+  "description": "Ini adalah proyek tugas akhir Dicoding kelas Fundramental Frontend Web Development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Bayu Samudra <contact@bayusamudra.my.id> (https://bayusamudra.my.id/)",
+  "license": "MIT"
+}
