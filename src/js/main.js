@@ -1,7 +1,8 @@
 import 'bootstrap/scss/bootstrap.scss';
 import '@style/index.scss';
-import Header from '@/components/Header.js';
+import App from './App';
 
 const app = document.getElementById('app');
-app.appendChild(new Header());
+app.appendChild(new App());
+
 console.log('Halo, dunia. Apa kabarnya?');

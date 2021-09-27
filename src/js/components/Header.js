@@ -1,4 +1,4 @@
-import Component from '../lib/Component';
+import Component from '@/lib/Component';
 import logo from '@assets/logo.png';
 
 export default class Header extends Component {

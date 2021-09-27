@@ -12,6 +12,7 @@ export default class Component extends HTMLElement {
   adoptedCallback() {
     this.render();
   }
+
   render() {}
 
   static register(tagname, constructor) {
