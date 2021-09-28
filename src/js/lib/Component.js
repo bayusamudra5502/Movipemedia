@@ -3,11 +3,9 @@ export default class Component extends HTMLElement {
     this.render();
   }
 
-  attributeChangedCallback(attrname, oldvalue, newvalue) {
+  attributeChangedCallback() {
     this.render();
   }
-
-  disconnectedCallback() {}
 
   adoptedCallback() {
     this.render();

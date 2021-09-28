@@ -1,40 +1,40 @@
-const path = require("path");
-const common = require("./webpack.common");
-const { merge } = require("webpack-merge");
-const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require('path');
+const common = require('./webpack.common');
+const { merge } = require('webpack-merge');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "assets/js/[name].[hash].js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'assets/js/[name].[fullhash].js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   plugins: [
     // Memisahkan CSS dengan Javascript
 
     new MiniCSSExtractPlugin({
-      filename: "assets/css/[name].[hash].css",
+      filename: 'assets/css/[name].[fullhash].css',
     }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCSSExtractPlugin.loader, "css-loader"],
+        use: [MiniCSSExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.scss$/,
-        use: [MiniCSSExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ['@babel/preset-env'],
           },
         },
       },
@@ -42,5 +42,10 @@ module.exports = merge(common, {
   },
   optimization: {
     minimizer: [new CssMinimizerPlugin()],
+    splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 100000,
+    },
   },
 });
