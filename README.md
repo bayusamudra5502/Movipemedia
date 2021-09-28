@@ -6,6 +6,16 @@ Sebuah aplikasi mini yang dapat mencari daftar film.
 
 Untuk build package ini, gunakanlah perintah berikut:
 
-```shell
+```sh
+npm install
 npm run build
+```
+
+## Cara menjalankan pada mode Development
+
+Gunakan perintah berikut:
+
+```sh
+npm install
+npm start
 ```
